@@ -1,3 +1,8 @@
+/*
+This is a project by Hermeteus (Francisco Fernández Coca) for his personal portfolio.
+It is released under the CC BY-SA license.
+*/
+
 (function() {
     let scene, camera, renderer;
     let carousel;

@@ -1,3 +1,8 @@
+/*
+This is a project by Hermeteus (Francisco Fernández Coca) for his personal portfolio.
+It is released under the CC BY-SA license.
+*/
+
 // Object containing translations for different languages
 const translations = {
     en: {
