@@ -1,4 +1,4 @@
-// Objeto con traducciones
+// Object containing translations for different languages
 const translations = {
     en: {
         // Navbar
@@ -94,69 +94,69 @@ const translations = {
     }
 };
 
-// Cambia el idioma y guarda en localStorage
+// Function to switch the language and store the choice in localStorage
 function switchLanguage(language) {
-    localStorage.setItem("selectedLanguage", language);
-    applyLanguage(language);
+    localStorage.setItem("selectedLanguage", language);  // Save the selected language to localStorage
+    applyLanguage(language);  // Apply the language to the page
 }
 
-// Aplica las traducciones
+// Function to apply the translations to the page
 function applyLanguage(language) {
     // Navbar
-    document.getElementById('home-link').textContent = translations[language].home;
-    document.querySelector('#languageDropdown').textContent = translations[language].language;
+    document.getElementById('home-link').textContent = translations[language].home;  // Set the 'Home' link text
+    document.querySelector('#languageDropdown').textContent = translations[language].language;  // Set the language dropdown text
 
     // Language dropdown
-    const languageItems = document.querySelectorAll('.dropdown-item');
-    languageItems[0].textContent = translations[language].english;
-    languageItems[1].textContent = translations[language].spanish;
+    const languageItems = document.querySelectorAll('.dropdown-item');  // Get language items
+    languageItems[0].textContent = translations[language].english;  // Set the 'English' option text
+    languageItems[1].textContent = translations[language].spanish;  // Set the 'Spanish' option text
 
     // Projects
-    document.getElementById('project1-title').textContent = translations[language].project1Title;
-    document.getElementById('project1-description').textContent = translations[language].project1Description;
-    document.getElementById('platform-title').textContent = translations[language].platformTitle;
-    document.getElementById('genre-title').textContent = translations[language].genreTitle;
-    document.getElementById('engine-title').textContent = translations[language].engineTitle;
-    document.getElementById('view-project-btn').textContent = translations[language].viewProjectBtn;
+    document.getElementById('project1-title').textContent = translations[language].project1Title;  // Set title for project 1
+    document.getElementById('project1-description').textContent = translations[language].project1Description;  // Set description for project 1
+    document.getElementById('platform-title').textContent = translations[language].platformTitle;  // Set platform label
+    document.getElementById('genre-title').textContent = translations[language].genreTitle;  // Set genre label
+    document.getElementById('engine-title').textContent = translations[language].engineTitle;  // Set engine label
+    document.getElementById('view-project-btn').textContent = translations[language].viewProjectBtn;  // Set 'View Project' button text
 
-    document.getElementById('project2-title').textContent = translations[language].project2Title;
-    document.getElementById('project2-description').textContent = translations[language].project2Description;
-    document.getElementById('platform2-title').textContent = translations[language].platform2Title;
-    document.getElementById('genre2-title').textContent = translations[language].genre2Title;
-    document.getElementById('engine2-title').textContent = translations[language].engine2Title;
-    document.getElementById('view-project2-btn').textContent = translations[language].viewProject2Btn;
+    document.getElementById('project2-title').textContent = translations[language].project2Title;  // Set title for project 2
+    document.getElementById('project2-description').textContent = translations[language].project2Description;  // Set description for project 2
+    document.getElementById('platform2-title').textContent = translations[language].platform2Title;  // Set platform label for project 2
+    document.getElementById('genre2-title').textContent = translations[language].genre2Title;  // Set genre label for project 2
+    document.getElementById('engine2-title').textContent = translations[language].engine2Title;  // Set engine label for project 2
+    document.getElementById('view-project2-btn').textContent = translations[language].viewProject2Btn;  // Set 'View Project' button text for project 2
 
-    document.getElementById('project3-title').textContent = translations[language].project3Title;
-    document.getElementById('project3-description').textContent = translations[language].project3Description;
-    document.getElementById('platform3-title').textContent = translations[language].platform3Title;
-    document.getElementById('genre3-title').textContent = translations[language].genre3Title;
-    document.getElementById('engine3-title').textContent = translations[language].engine3Title;
-    document.getElementById('view-project3-btn').textContent = translations[language].viewProject3Btn;
+    document.getElementById('project3-title').textContent = translations[language].project3Title;  // Set title for project 3
+    document.getElementById('project3-description').textContent = translations[language].project3Description;  // Set description for project 3
+    document.getElementById('platform3-title').textContent = translations[language].platform3Title;  // Set platform label for project 3
+    document.getElementById('genre3-title').textContent = translations[language].genre3Title;  // Set genre label for project 3
+    document.getElementById('engine3-title').textContent = translations[language].engine3Title;  // Set engine label for project 3
+    document.getElementById('view-project3-btn').textContent = translations[language].viewProject3Btn;  // Set 'View Project' button text for project 3
 
-    document.getElementById('project4-title').textContent = translations[language].project4Title;
-    document.getElementById('project4-description').textContent = translations[language].project4Description;
-    document.getElementById('platform4-title').textContent = translations[language].platform4Title;
-    document.getElementById('genre4-title').textContent = translations[language].genre4Title;
-    document.getElementById('engine4-title').textContent = translations[language].engine4Title;
-    document.getElementById('view-project4-btn').textContent = translations[language].viewProject4Btn;
+    document.getElementById('project4-title').textContent = translations[language].project4Title;  // Set title for project 4
+    document.getElementById('project4-description').textContent = translations[language].project4Description;  // Set description for project 4
+    document.getElementById('platform4-title').textContent = translations[language].platform4Title;  // Set platform label for project 4
+    document.getElementById('genre4-title').textContent = translations[language].genre4Title;  // Set genre label for project 4
+    document.getElementById('engine4-title').textContent = translations[language].engine4Title;  // Set engine label for project 4
+    document.getElementById('view-project4-btn').textContent = translations[language].viewProject4Btn;  // Set 'View Project' button text for project 4
 
-    document.getElementById('project5-title').textContent = translations[language].project5Title;
-    document.getElementById('project5-description').textContent = translations[language].project5Description;
-    document.getElementById('platform5-title').textContent = translations[language].platform5Title;
-    document.getElementById('genre5-title').textContent = translations[language].genre5Title;
-    document.getElementById('engine5-title').textContent = translations[language].engine5Title;
-    document.getElementById('view-project5-btn').textContent = translations[language].viewProject5Btn;
+    document.getElementById('project5-title').textContent = translations[language].project5Title;  // Set title for project 5
+    document.getElementById('project5-description').textContent = translations[language].project5Description;  // Set description for project 5
+    document.getElementById('platform5-title').textContent = translations[language].platform5Title;  // Set platform label for project 5
+    document.getElementById('genre5-title').textContent = translations[language].genre5Title;  // Set genre label for project 5
+    document.getElementById('engine5-title').textContent = translations[language].engine5Title;  // Set engine label for project 5
+    document.getElementById('view-project5-btn').textContent = translations[language].viewProject5Btn;  // Set 'View Project' button text for project 5
 
     // Footer
-    document.getElementById('footer-text').innerHTML = translations[language].footerText;
+    document.getElementById('footer-text').innerHTML = translations[language].footerText;  // Set footer text
 
-    // Cambiar bandera en el dropdown
+    // Change the flag in the dropdown
     document.getElementById('languageDropdown').innerHTML = 
-        `<i class="flag-icon flag-icon-${language === 'es' ? 'es' : 'us'}"></i> ${language.toUpperCase()}`;
+        `<i class="flag-icon flag-icon-${language === 'es' ? 'es' : 'us'}"></i> ${language.toUpperCase()}`;  // Update the flag and language in dropdown
 }
 
-// Cargar idioma guardado
+// Load saved language preference on page load
 document.addEventListener("DOMContentLoaded", function () {
-    const savedLang = localStorage.getItem("selectedLanguage") || "en";
-    applyLanguage(savedLang);
+    const savedLang = localStorage.getItem("selectedLanguage") || "en";  // Load the saved language, default to English
+    applyLanguage(savedLang);  // Apply the saved language
 });

@@ -11,16 +11,16 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Navbar: Navigation bar at the top -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container d-flex flex-column align-items-center">
-      <!-- Botón de hamburguesa centrado -->
+      <!-- Centered hamburger button for mobile view -->
       <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Content of navbar -->
+      <!-- Content of the navbar: Links to different sections -->
       <div class="collapse navbar-collapse text-center" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item"><a class="nav-link" href="#home" id="home-link">Home</a></li>
@@ -28,7 +28,7 @@
           <li class="nav-item"><a class="nav-link" href="#portfolio" id="portfolio-link">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="#social" id="social-link">Social Networks</a></li>
 
-          <!-- Language Dropdown -->
+          <!-- Language Dropdown: Allows switching between languages -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
@@ -44,9 +44,10 @@
     </div>
   </nav>
 
+  <!-- Canvas for background animation -->
   <canvas id="spaceCanvas" class="position-absolute w-100 h-100"></canvas>
 
-  <!-- Main Content -->
+  <!-- Main Content Section -->
   <section id="home" class="hero-section d-flex justify-content-center align-items-center">
     <div class="text-center text-white">
       <img src="/img/logo.svg" alt="Logo" class="img-fluid mb-3">
@@ -55,10 +56,10 @@
     </div>
   </section>
 
-  <!-- Section About -->
+  <!-- About Section: Information about the creator -->
   <section id="about-section" class="about-section">
     <div class="about-box">
-        <img src="/img/profile.svg" alt="Foto de perfil" class="about-img">
+        <img src="/img/profile.svg" alt="Profile Picture" class="about-img">
     </div>
     <div class="about-box">
         <p class="about-text">
@@ -73,9 +74,7 @@
     </div>
   </section>
 
-  
-
-  <!-- Section Portfolio -->
+  <!-- Portfolio Section: Showcases the user's game projects -->
   <section id="portfolio" class="portfolio-section py-5">
     <div class="text-center my-5">
       <h2 id="portfolio-title">Portfolio</h2>
@@ -84,10 +83,9 @@
       <button id="prev">&#10094;</button>
       <button id="next">&#10095;</button>
 
-      
-      <!-- Botón para redirigir a otra web -->
+      <!-- Button that redirects to another webpage -->
       <div class="mt-4">
-        <a href="game_directory.html" target="_blank" class="btn-custom"> <!-- Cambié 'btn-primary' por 'btn-custom' -->
+        <a href="game_directory.html" target="_blank" class="btn-custom"> <!-- Changed 'btn-primary' to 'btn-custom' -->
           All games
         </a>
       </div>
@@ -95,10 +93,10 @@
     </div>
   </section>
 
-  <!-- Section Social Networks -->
+  <!-- Social Networks Section: Links to the creator's social media profiles -->
   <section id="social" class="social-section">
     <div class="social-wrapper">
-      <!-- First Social Box (Dev) -->
+      <!-- First Social Box (Dev): Links to development-related platforms -->
       <div class="social-box dev-box">
         <h3>Dev</h3>
         <ul class="social-links">
@@ -120,10 +118,10 @@
         </ul>
       </div>
 
-      <!-- Vertical Divider -->
+      <!-- Vertical Divider: Divider between the social sections -->
       <div class="vertical-divider"></div>
 
-      <!-- Second Social Box (Gameplay) -->
+      <!-- Second Social Box (Gameplay): Links to gameplay-related platforms -->
       <div class="social-box gameplay-box">
         <h3>Gameplay</h3>
         <ul class="social-links">
@@ -145,7 +143,7 @@
         </ul>
       </div>
       
-      <!-- New Third Social Box (General) -->
+      <!-- New Third Social Box (General): Links to general social media profiles -->
       <div class="social-box general-box" style="width: 100%; margin-top: 20px;">
         <h3>General</h3>
         <ul class="social-links">
@@ -170,12 +168,12 @@
     </div>
   </section>
 
-
-  <!-- Footer -->
+  <!-- Footer: Copyright and attribution information -->
   <footer class="footer text-center py-3">
     <p id="footer-text">&copy; 2025 Hermeteus (Francisco Fernandez). All rights reserved.</p>
   </footer>
 
+  <!-- Bootstrap and custom JS scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>  
   <script src="/js/dream.js"></script>

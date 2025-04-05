@@ -1,4 +1,4 @@
-// Objeto con traducciones
+// Object containing translations for different languages
 const translations = {
     en: {
         home: "Home",
@@ -40,34 +40,37 @@ const translations = {
     }
 };
 
-// Cambia el idioma y guarda en localStorage
+// Function to switch the language and store the choice in localStorage
 function switchLanguage(language) {
-    localStorage.setItem("selectedLanguage", language);
-    applyLanguage(language);
+    localStorage.setItem("selectedLanguage", language);  // Save the selected language to localStorage
+    applyLanguage(language);  // Apply the language to the page
 }
 
-// Aplica las traducciones
+// Function to apply the translations to the page
 function applyLanguage(language) {
-    document.getElementById('home-link').textContent = translations[language].home;
-    document.getElementById('about-link').textContent = translations[language].about;
-    document.getElementById('portfolio-link').textContent = translations[language].portfolio;
-    document.getElementById('social-link').textContent = translations[language].social;
-    document.getElementById('hero-title').textContent = translations[language].heroTitle;
-    document.getElementById('hero-description').textContent = translations[language].heroDescription;
-    document.getElementById('footer-text').textContent = translations[language].footerText;
-    document.querySelector('.about-text').innerHTML = translations[language].aboutText;
+    document.getElementById('home-link').textContent = translations[language].home;  // Set the 'Home' link text
+    document.getElementById('about-link').textContent = translations[language].about;  // Set the 'About Me' link text
+    document.getElementById('portfolio-link').textContent = translations[language].portfolio;  // Set the 'Portfolio' link text
+    document.getElementById('social-link').textContent = translations[language].social;  // Set the 'Social Networks' link text
+    document.getElementById('hero-title').textContent = translations[language].heroTitle;  // Set the hero section title
+    document.getElementById('hero-description').textContent = translations[language].heroDescription;  // Set the hero section description
+    document.getElementById('footer-text').textContent = translations[language].footerText;  // Set the footer text
+    document.querySelector('.about-text').innerHTML = translations[language].aboutText;  // Set the about section content
+
+    // Set the portfolio section title and description
     document.getElementById('portfolio-title').textContent = translations[language].portfolioTitle;
     document.getElementById('portfolio-description').textContent = translations[language].portfolioDescription;
 
-    // Actualiza el texto del botón de "Todos los juegos"
+    // Update the text of the 'All games' button
     document.querySelector('a.btn-custom').textContent = translations[language].allGamesButton;
 
+    // Update the language dropdown flag and text
     document.getElementById('languageDropdown').innerHTML = 
         `<i class="flag-icon flag-icon-${language === 'es' ? 'es' : 'us'}"></i> ${language.toUpperCase()}`;
 }
 
-// Cargar idioma guardado
+// Load the language saved in localStorage when the page is loaded
 document.addEventListener("DOMContentLoaded", function () {
-    const savedLang = localStorage.getItem("selectedLanguage") || "en";
-    applyLanguage(savedLang);
+    const savedLang = localStorage.getItem("selectedLanguage") || "en";  // Get the saved language, default to 'en'
+    applyLanguage(savedLang);  // Apply the saved language to the page
 });

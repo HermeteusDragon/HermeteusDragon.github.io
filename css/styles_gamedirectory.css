@@ -2,71 +2,71 @@
    1. GENERAL STYLES AND BODY
 -------------------------------------------------- */
 body {
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Arial', sans-serif;
-    background-image: url("../img/fondo.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #fff;
-    overflow-y: auto;
+    min-height: 100vh;  /* Ensure the body takes the full height of the viewport */
+    margin: 0;  /* Remove default margin */
+    display: flex;  /* Use flexbox for layout */
+    flex-direction: column;  /* Stack elements vertically */
+    font-family: 'Arial', sans-serif;  /* Set font family */
+    background-image: url("../img/fondo.jpg");  /* Set background image */
+    background-size: cover;  /* Ensure the image covers the entire background */
+    background-position: center;  /* Center the background image */
+    background-attachment: fixed;  /* Make the background fixed when scrolling */
+    color: #fff;  /* Set text color to white */
+    overflow-y: auto;  /* Allow vertical scrolling */
 }
 
 /* -----------------------------------------------
    2. NAVBAR AND MENU
 -------------------------------------------------- */
 .navbar {
-    background-color: #1c1c1c;
-    padding: 10px 20px;
-    position: relative;
+    background-color: #1c1c1c;  /* Set navbar background color */
+    padding: 10px 20px;  /* Add padding around the navbar */
+    position: relative;  /* Allow absolute positioning of elements inside the navbar */
 }
 
 .navbar-toggler {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
+    position: absolute;  /* Position the toggler button absolutely */
+    top: 50%;  /* Center the button vertically */
+    left: 20px;  /* Position the button 20px from the left */
+    transform: translateY(-50%);  /* Adjust the button to center vertically */
+    background-color: transparent;  /* Make the background transparent */
+    border: none;  /* Remove the border */
 }
 
 .dropdown-menu {
-    background-color: #1c1c1c;
-    border: none;
+    background-color: #1c1c1c;  /* Set dropdown background color */
+    border: none;  /* Remove dropdown border */
 }
 
 .dropdown-menu .dropdown-item {
-    color: white;
+    color: white;  /* Set item text color to white */
 }
 
 .dropdown-menu .dropdown-item:hover {
-    background-color: #333;
+    background-color: #333;  /* Change background color when hovering over an item */
 }
 
 @media (max-width: 990px) {
     .navbar {
-        padding: 15px 20px;
-        min-height: 60px;
+        padding: 15px 20px;  /* Increase padding on smaller screens */
+        min-height: 60px;  /* Reduce navbar height on smaller screens */
     }
 
     .navbar-toggler {
-        top: 50%;
-        left: 20px;
-        transform: translateY(-50%);
+        top: 50%;  /* Keep the button centered vertically */
+        left: 20px;  /* Keep the button 20px from the left */
+        transform: translateY(-50%);  /* Keep the button centered vertically */
     }
 
     .navbar-collapse {
-        text-align: center;
+        text-align: center;  /* Center-align the navbar items */
     }
 
     .navbar-nav {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        width: 100%;  /* Set the navbar items to take up the full width */
+        display: flex;  /* Use flexbox for the navbar items */
+        flex-direction: column;  /* Stack navbar items vertically */
+        align-items: center;  /* Center the items horizontally */
     }
 }
 
@@ -74,119 +74,124 @@ body {
    3. CANVAS BACKGROUND
 -------------------------------------------------- */
 #spaceCanvas {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 100vh;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    pointer-events: none;
+    position: fixed;  /* Fix the canvas in place */
+    top: 50%;  /* Center the canvas vertically */
+    left: 50%;  /* Center the canvas horizontally */
+    width: 100vw;  /* Make the canvas take up the full width of the viewport */
+    height: 100vh;  /* Make the canvas take up the full height of the viewport */
+    transform: translate(-50%, -50%);  /* Adjust the position to center the canvas */
+    z-index: -1;  /* Place the canvas behind other elements */
+    pointer-events: none;  /* Disable interactions with the canvas */
 }
 
 /* -----------------------------------------------
    4. ANIMATIONS (FADE IN/OUT)
 -------------------------------------------------- */
 .fade-in {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    animation: fadeIn 1s forwards;
+    display: flex !important;  /* Ensure the element is displayed */
+    visibility: visible !important;  /* Ensure the element is visible */
+    opacity: 1 !important;  /* Make the element fully opaque */
+    animation: fadeIn 1s forwards;  /* Apply fade-in animation */
 }
 
 .fade-out {
-    visibility: hidden !important;
-    opacity: 0 !important;
-    animation: fadeOut 1s forwards;
+    visibility: hidden !important;  /* Hide the element */
+    opacity: 0 !important;  /* Make the element fully transparent */
+    animation: fadeOut 1s forwards;  /* Apply fade-out animation */
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; }  /* Start the animation with opacity 0 */
+    to { opacity: 1; }  /* End the animation with opacity 1 */
 }
 
 @keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
+    from { opacity: 1; }  /* Start the animation with opacity 1 */
+    to { opacity: 0; }  /* End the animation with opacity 0 */
 }
 
 /* -----------------------------------------------
    5. FOOTER
 -------------------------------------------------- */
 .footer {
-    background-color: #1c1c1c;
-    color: #fff;
-    padding: 20px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 9999;
-    text-align: center;
+    background-color: #1c1c1c;  /* Set the footer background color */
+    color: #fff;  /* Set the text color to white */
+    padding: 20px 0;  /* Add padding to the footer */
+    position: fixed;  /* Fix the footer at the bottom of the page */
+    bottom: 0;  /* Position the footer at the bottom */
+    width: 100%;  /* Make the footer take up the full width */
+    z-index: 9999;  /* Ensure the footer stays on top */
+    text-align: center;  /* Center-align the footer text */
 }
 
-
-/* Estilo de la tarjeta */
+/* -----------------------------------------------
+   6. PROJECT CARD STYLES
+-------------------------------------------------- */
 .project-card {
-    border: 1px solid #12819c;  /* Borde sutil */
-    border-radius: 8px;       /* Bordes redondeados */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo ligeramente oscuro */
-    color: #fff;              /* Texto blanco para buena legibilidad */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto suave al pasar el ratón */
-    box-shadow: 0px 4px 10px rgba(0, 204, 255, 0.2); /* Sombra sutil */
+    border: 1px solid #12819c;  /* Add a subtle border with a specific color */
+    border-radius: 8px;  /* Round the corners */
+    background-color: rgba(0, 0, 0, 0.5);  /* Set a slightly dark background for the card */
+    color: #fff;  /* Set text color to white */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth transition for transform and shadow */
+    box-shadow: 0px 4px 10px rgba(0, 204, 255, 0.2);  /* Add a subtle shadow */
 }
-  
-  .project-card:hover {
-    transform: translateY(-5px); /* Desplazamiento hacia arriba cuando el ratón pasa por encima */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más prominente */
-  }
-  
-  .project-card img {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    object-fit: cover;
-    height: 200px; /* Controla el tamaño de la imagen */
-  }
-  
-  .card-body {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .card-title {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    font-weight: 600; /* Negrita para el título */
-  }
-  
-  .card-text {
-    font-size: 1rem;
-    color: #ddd; /* Texto gris claro para las descripciones */
-  }
-  
-  .card-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: transparent;
-  }
-  
-/* Estilo de los botones */
+
+.project-card:hover {
+    transform: translateY(-5px);  /* Move the card up slightly on hover */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);  /* Make the shadow more prominent on hover */
+}
+
+.project-card img {
+    border-top-left-radius: 8px;  /* Round the top-left corner of the image */
+    border-top-right-radius: 8px;  /* Round the top-right corner of the image */
+    object-fit: cover;  /* Ensure the image covers the area */
+    height: 200px;  /* Set a fixed height for the image */
+}
+
+.card-body {
+    padding: 20px;  /* Add padding inside the card body */
+    text-align: center;  /* Center-align the text */
+}
+
+.card-title {
+    font-size: 1.25rem;  /* Set the font size of the card title */
+    margin-bottom: 10px;  /* Add space below the title */
+    font-weight: 600;  /* Set the font weight to bold */
+}
+
+.card-text {
+    font-size: 1rem;  /* Set the font size of the card text */
+    color: #ddd;  /* Set the text color to light gray */
+}
+
+.card-footer {
+    text-align: center;  /* Center-align the footer text */
+    padding: 10px 0;  /* Add padding to the footer */
+    background-color: transparent;  /* Make the background transparent */
+}
+
+/* -----------------------------------------------
+   7. BUTTON STYLES
+-------------------------------------------------- */
 .btn-primary {
-    background-color: #12819c; /* Mismo color azul que el borde de la tarjeta */
-    border-color: #12819c;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    background-color: #12819c;  /* Set the button background color */
+    border-color: #12819c;  /* Set the button border color */
+    border-radius: 5px;  /* Round the corners of the button */
+    padding: 10px 20px;  /* Add padding to the button */
+    font-weight: 600;  /* Set the font weight to bold */
+    transition: background-color 0.3s ease;  /* Smooth transition for background color */
 }
 
 .btn-primary:hover {
-    background-color: #0a5e7d; /* Un azul más oscuro cuando se pasa el ratón */
-    border-color: #0a5e7d;
+    background-color: #0a5e7d;  /* Change the background color on hover */
+    border-color: #0a5e7d;  /* Change the border color on hover */
 }
-  
-  /* Asegurarse de que las tarjetas sean responsivas */
-  @media (max-width: 768px) {
+
+/* -----------------------------------------------
+   8. RESPONSIVE STYLES FOR SMALLER SCREENS
+-------------------------------------------------- */
+@media (max-width: 768px) {
     .project-card {
-      margin-bottom: 20px; /* Espacio adicional entre tarjetas en pantallas pequeñas */
+        margin-bottom: 20px;  /* Add extra space between cards on smaller screens */
     }
-  }
+}

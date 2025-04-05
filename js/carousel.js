@@ -10,103 +10,103 @@
     ];
     let currentSlide = 0;
     let targetRotation = 0;
-    let rotationSpeed = 0.01;  // Velocidad de rotación de la animación
-    let rotating = false;  // Variable para evitar que se inicie otra rotación mientras se mueve
+    let rotationSpeed = 0.01;  // Rotation speed of the animation
+    let rotating = false;  // Variable to prevent initiating another rotation while the carousel is moving
 
-    // Crear la escena y la cámara
+    // Create the scene and the camera
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-    // Crear el renderizador con fondo transparente
+    // Create the renderer with transparent background
     renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-    // Obtener el contenedor con id 'pr' y añadir el renderizador allí
+    // Get the container with id 'carousel' and append the renderer to it
     let container = document.getElementById('carousel');
     if (container) {
-        container.appendChild(renderer.domElement);  // Insertamos el renderizador en el div
+        container.appendChild(renderer.domElement);  // Insert the renderer into the div
     } else {
-        console.error("El contenedor con id 'pr' no se encontró.");
+        console.error("Container with id 'carousel' not found.");
     }
 
-    // Establecer el color de fondo como transparente
-    renderer.setClearColor(0x000000, 0); // 0x000000 es el color (negro) y 0 es la transparencia (alpha)
+    // Set the background color to transparent
+    renderer.setClearColor(0x000000, 0); // 0x000000 is the color (black) and 0 is the transparency (alpha)
 
-    // Crear el cilindro (será invisible, solo sirve para mantener las imágenes en forma circular)
-    let geometry = new THREE.CylinderGeometry(20, 20, 1, 32);  // Radio 20, cilindro de 1 unidad de altura
+    // Create a cylinder (it will be invisible, just used to hold images in a circular shape)
+    let geometry = new THREE.CylinderGeometry(20, 20, 1, 32);  // Radius 20, cylinder with 1 unit height
     let material = new THREE.MeshBasicMaterial({ color: 0xeeeeee, wireframe: false, visible: false });
     carousel = new THREE.Mesh(geometry, material);
     scene.add(carousel);
 
-    // Posicionar la cámara
+    // Position the camera
     camera.position.z = 15;
 
-    // Añadir una luz ambiental para mejorar la visibilidad
-    let light = new THREE.AmbientLight(0x404040, 2);  // Luz suave
+    // Add ambient light to improve visibility
+    let light = new THREE.AmbientLight(0x404040, 2);  // Soft light
     scene.add(light);
 
-    // Cargar las texturas (imágenes del carrusel)
+    // Load the textures (images for the carousel)
     let loader = new THREE.TextureLoader();
 
     let meshes = [];
     images.forEach((image, index) => {
         loader.load(image.src, (texture) => {
-            // Calcular la relación de aspecto de la imagen
+            // Calculate the aspect ratio of the image
             let aspectRatio = texture.image.width / texture.image.height;
 
-            // Ajustar el tamaño de la geometría según la proporción de la imagen
-            let planeWidth = 13.5;  // Aumentar el ancho para hacer las imágenes más grandes
-            let planeHeight = planeWidth / aspectRatio;  // Ajuste proporcional de la altura
+            // Adjust the size of the geometry according to the image aspect ratio
+            let planeWidth = 13.5;  // Increase width to make images larger
+            let planeHeight = planeWidth / aspectRatio;  // Proportional height adjustment
 
             let material = new THREE.MeshBasicMaterial({
                 map: texture, 
-                side: THREE.FrontSide  // Usamos FrontSide para que las imágenes estén orientadas hacia afuera
+                side: THREE.FrontSide  // Use FrontSide so images face outward
             });
 
-            let mesh = new THREE.Mesh(new THREE.PlaneGeometry(planeWidth, planeHeight), material);  // Imagen con tamaño ajustado
+            let mesh = new THREE.Mesh(new THREE.PlaneGeometry(planeWidth, planeHeight), material);  // Image with adjusted size
 
-            // Posicionar las imágenes alrededor del cilindro
-            mesh.position.set(Math.sin((index / images.length) * 2 * Math.PI) * 6, 0, Math.cos((index / images.length) * 2 * Math.PI) * 6);  // Distribución circular
-            // Girar las imágenes para que apunten hacia afuera (ya está orientado con FrontSide)
-            mesh.rotateY(Math.PI);  // Invertir la dirección de las imágenes, para que miren hacia afuera
+            // Position images around the cylinder
+            mesh.position.set(Math.sin((index / images.length) * 2 * Math.PI) * 6, 0, Math.cos((index / images.length) * 2 * Math.PI) * 6);  // Circular distribution
+            // Rotate the images so they face outward (already oriented with FrontSide)
+            mesh.rotateY(Math.PI);  // Invert the direction of the images, so they face outward
 
-            // Agregar las imágenes al cilindro
-            carousel.add(mesh);  // Añadir cada imagen al cilindro
-            meshes.push(mesh); // Guardar las mallas para referencia futura
+            // Add the images to the cylinder
+            carousel.add(mesh);  // Add each image to the cylinder
+            meshes.push(mesh); // Store the meshes for future reference
         });
     });
 
-    // Función para mover a la siguiente imagen, de forma circular
+    // Function to move to the next image, in a circular manner
     function moveSlide(direction) {
-        if (rotating) return; // No hacer nada si ya está rotando
-        rotating = true;  // Indicar que está en rotación
+        if (rotating) return; // Do nothing if already rotating
+        rotating = true;  // Indicate that rotation is in progress
 
-        // Modificar el índice de la imagen actual dependiendo de la dirección
+        // Modify the current image index depending on the direction
         if (direction === 1) {
-            currentSlide = (currentSlide + 1) % images.length; // Mover a la siguiente imagen (y volver a la primera si es la última)
+            currentSlide = (currentSlide + 1) % images.length; // Move to the next image (and wrap back to the first if it's the last)
         } else if (direction === -1) {
-            currentSlide = (currentSlide - 1 + images.length) % images.length; // Mover a la imagen anterior (y volver a la última si es la primera)
+            currentSlide = (currentSlide - 1 + images.length) % images.length; // Move to the previous image (and wrap back to the last if it's the first)
         }
 
-        // Calculamos la rotación objetivo basada en la dirección de la imagen seleccionada
+        // Calculate the target rotation based on the selected image's direction
         targetRotation = (currentSlide / images.length) * 2 * Math.PI;
 
-        // Iniciar la animación
+        // Start the animation
         animate();
     }
 
-    // Botones de control
-    document.getElementById('prev').addEventListener('click', () => moveSlide(-1));  // Control izquierdo
-    document.getElementById('next').addEventListener('click', () => moveSlide(1));  // Control derecho
+    // Control buttons
+    document.getElementById('prev').addEventListener('click', () => moveSlide(-1));  // Left control
+    document.getElementById('next').addEventListener('click', () => moveSlide(1));  // Right control
 
-    // Animación para rotar el carrusel hacia la imagen seleccionada
+    // Animation to rotate the carousel to the selected image
     function animate() {
         requestAnimationFrame(animate);
 
-        // Mover el carrusel hacia la rotación objetivo con un movimiento suave
+        // Move the carousel towards the target rotation with smooth movement
         let rotationDifference = targetRotation - carousel.rotation.y;
 
-        // Ajustar la dirección de la rotación para que siempre sea la más corta
+        // Adjust the rotation direction so it always takes the shortest path
         if (rotationDifference > Math.PI) {
             rotationDifference -= 2 * Math.PI;
         } else if (rotationDifference < -Math.PI) {
@@ -115,22 +115,19 @@
 
         carousel.rotation.y += rotationDifference * rotationSpeed;
 
-        // Mantener las imágenes mirando hacia la cámara
+        // Keep images facing the camera
         meshes.forEach(mesh => {
-            mesh.lookAt(camera.position);  // Hacer que cada imagen mire siempre hacia la cámara
+            mesh.lookAt(camera.position);  // Make each image always face the camera
         });
 
-        // Detener el movimiento cuando el carrusel llega a la rotación exacta
+        // Stop movement when the carousel reaches the exact rotation
         if (Math.abs(rotationDifference) < 0.01) {
             carousel.rotation.y = targetRotation;
-            rotating = false; // Fin de la rotación
+            rotating = false; // End of the rotation
         }
 
         renderer.render(scene, camera);
     }
-
-    // Eliminamos la detección de clics en las imágenes (ya no se necesita)
-    // window.addEventListener('click', onMouseClick, false);  // Eliminar esta línea
 
     animate();
 })();

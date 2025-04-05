@@ -345,7 +345,6 @@ button {
     color: #0ff;
 }
 
-
 /* Mobile scale */
 @media (max-width: 768px) {
     body, html {

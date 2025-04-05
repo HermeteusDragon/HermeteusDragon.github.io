@@ -9,10 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const portfolioLink = document.getElementById("portfolio-link");
     const socialLink = document.getElementById("social-link");
 
+    // Check if all the necessary elements are found in the DOM
     if (heroSection && aboutSection && portfolioSection && socialSection &&
         homeLink && aboutLink && portfolioLink && socialLink) {
 
-        // Función para ocultar todas las secciones
+        // Function to hide all sections with a fade-out animation
         function hideAllSections() {
             const sections = [heroSection, aboutSection, portfolioSection, socialSection];
             sections.forEach(section => {
@@ -20,48 +21,48 @@ document.addEventListener("DOMContentLoaded", function () {
                 section.classList.add("fade-out");
                 setTimeout(() => {
                     section.style.display = "none";
-                }, 1000); // Duración de la animación (1s)
+                }, 1000); // Animation duration (1 second)
             });
         }
 
-        // Función para mostrar una sección
+        // Function to show a specific section with a fade-in animation
         function showSection(section) {
-            section.style.display = "flex"; // o "block" si tu sección no usa Flexbox
+            section.style.display = "flex"; // or "block" if the section doesn't use Flexbox
             setTimeout(() => {
                 section.classList.remove("fade-out");
                 section.classList.add("fade-in");
-            }, 50); // Tiempo para que comience la animación de aparición
+            }, 50); // Time before starting the fade-in animation
         }
 
-        // Configuración de eventos de los enlaces del navbar
+        // Set up event listeners for the navbar links to navigate between sections
         homeLink.addEventListener("click", function (e) {
             e.preventDefault();
-            hideAllSections();
-            showSection(heroSection);
+            hideAllSections();  // Hide all sections
+            showSection(heroSection);  // Show the home section
         });
 
         aboutLink.addEventListener("click", function (e) {
             e.preventDefault();
-            hideAllSections();
-            showSection(aboutSection);
+            hideAllSections();  // Hide all sections
+            showSection(aboutSection);  // Show the about section
         });
 
         portfolioLink.addEventListener("click", function (e) {
             e.preventDefault();
-            hideAllSections();
-            showSection(portfolioSection);
+            hideAllSections();  // Hide all sections
+            showSection(portfolioSection);  // Show the portfolio section
         });
 
         socialLink.addEventListener("click", function (e) {
             e.preventDefault();
-            hideAllSections();
-            showSection(socialSection);
+            hideAllSections();  // Hide all sections
+            showSection(socialSection);  // Show the social section
         });
 
-        // Al cargar la página, ocultamos todas las secciones y solo mostramos "Home"
+        // When the page loads, hide all sections and show only the "Home" section
         hideAllSections();
-        showSection(heroSection); // Aseguramos que "Home" sea la primera sección visible
+        showSection(heroSection);  // Ensure "Home" is the first section visible
     } else {
-        console.error("Algunos elementos no se encontraron en el DOM.");
+        console.error("Some elements were not found in the DOM.");
     }
 });
