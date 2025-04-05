@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermeteus Dreamforge</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container d-flex flex-column align-items-center">
+      <!-- Botón de hamburguesa centrado -->
+      <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Content of navbar -->
+      <div class="collapse navbar-collapse text-center" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#home" id="home-link">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0);" id="about-link">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio" id="portfolio-link">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#social" id="social-link">Social Networks</a></li>
+
+          <!-- Language Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="flag-icon flag-icon-us"></i> EN
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item" href="#" onclick="switchLanguage('en')"> English</a></li>
+              <li><a class="dropdown-item" href="#" onclick="switchLanguage('es')"> Español</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <canvas id="spaceCanvas" class="position-absolute w-100 h-100"></canvas>
+
+  <!-- Main Content -->
+  <section id="home" class="hero-section d-flex justify-content-center align-items-center">
+    <div class="text-center text-white">
+      <img src="/img/logo.svg" alt="Logo" class="img-fluid mb-3">
+      <h1 class="display-3" id="hero-title">Hermeteus Dreamforge</h1>
+      <p class="lead" id="hero-description">Design, Develop, and Shape Your Dreams</p>
+    </div>
+  </section>
+
+  <!-- Section About -->
+  <section id="about-section" class="about-section">
+    <div class="about-box">
+        <img src="/img/profile.svg" alt="Foto de perfil" class="about-img">
+    </div>
+    <div class="about-box">
+        <p class="about-text">
+          🎮 Student of Game Design and Development | Passionate about creating interactive worlds
+          <br><br>
+          I am a student in training and a video game enthusiast, always exploring new ways to tell stories and design interactive experiences. Since childhood, video games have been more than just a hobby: they are my inspiration and the path I want to follow.
+          <br><br>
+          Like a good dragon, I love hoarding knowledge treasures about Game Design, game mechanics, and interactive storytelling. I am constantly learning and looking for opportunities to improve my skills and leave my mark on the industry.
+          <br><br>
+          🔥 Always ready for new adventures in the world of game development.
+        </p>
+    </div>
+  </section>
+
+  
+
+  <!-- Section Portfolio -->
+  <section id="portfolio" class="portfolio-section py-5">
+    <div class="text-center my-5">
+      <h2 id="portfolio-title">Portfolio</h2>
+      <p id="portfolio-description">Discover my game projects below. Click on 'All games' to see them all.</p>
+      <div id="carousel"></div>
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
+
+      
+      <!-- Botón para redirigir a otra web -->
+      <div class="mt-4">
+        <a href="game_directory.html" target="_blank" class="btn-custom"> <!-- Cambié 'btn-primary' por 'btn-custom' -->
+          All games
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section Social Networks -->
+  <section id="social" class="social-section">
+    <div class="social-wrapper">
+      <!-- First Social Box (Dev) -->
+      <div class="social-box dev-box">
+        <h3>Dev</h3>
+        <ul class="social-links">
+          <li>
+            <a href="https://hermeteus.itch.io" target="_blank">
+              <i class="fab fa-itch-io"></i> Hermeteus Dreamforge
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@Hermeteus" target="_blank">
+              <i class="fab fa-youtube"></i> Hermeteus Dreamforge
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/HermeteusWorld" target="_blank">
+              <i class="fab fa-twitter"></i> Hermeteus Dreamforge
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider -->
+      <div class="vertical-divider"></div>
+
+      <!-- Second Social Box (Gameplay) -->
+      <div class="social-box gameplay-box">
+        <h3>Gameplay</h3>
+        <ul class="social-links">
+          <li>
+            <a href="https://www.youtube.com/hermeteusdragon" target="_blank">
+              <i class="fab fa-youtube"></i> Hermeteus Dragon
+            </a>
+          </li>
+          <li>
+            <a href="https://www.twitch.tv/hermeteusdragon" target="_blank">
+              <i class="fab fa-twitch"></i> Hermeteus Dragon
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/HermeteusDragon" target="_blank">
+              <i class="fab fa-twitter"></i> Hermeteus Dragon
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- New Third Social Box (General) -->
+      <div class="social-box general-box" style="width: 100%; margin-top: 20px;">
+        <h3>General</h3>
+        <ul class="social-links">
+          <li>
+            <a href="https://ko-fi.com/hermeteus" target="_blank">
+              <img src="/img/socialNetworks/kofi_symbol.png" alt="Ko-Fi" style="width: 20px; height: 18px; margin-right: 10px;">
+              Ko-Fi
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/hermeteusdragon/" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/ffernandezcoca/" target="_blank">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer text-center py-3">
+    <p id="footer-text">&copy; 2025 Hermeteus (Francisco Fernandez). All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>  
+  <script src="/js/dream.js"></script>
+  <script src="/js/lang.js"></script>
+  <script src="/js/controller.js"></script>
+  <script src="/js/carousel.js"></script>
+</body>
+</html>
