@@ -26,7 +26,3 @@ This portfolio was created to demonstrate my skills and passion for game design 
 - **Three.js**: Used for the 3D carousel effect and other visual elements.
 - **WebGL**: Utilized for creating an interactive, dynamic background.
 - **Bootstrap**: Framework for responsive design and grid layout.
-
-## Installation
-
-To view or contribute to this project, clone it to your local machine:
