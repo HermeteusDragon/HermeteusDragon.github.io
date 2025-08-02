@@ -19,6 +19,26 @@ body {
     font-size: 2.5rem;
   }
 
+  .achivements_menu {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1rem;
+  }
+
+  .achivements_menu a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .achivements_menu a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
   section {
     padding: 2rem;
     max-width: 900px;
