@@ -10,6 +10,7 @@ const translations = {
         about: "About Me",
         portfolio: "Portfolio",
         social: "Social Networks",
+        achivements: "Achivements",
         heroTitle: "Hermeteus Dreamforge",
         heroDescription: "Design, Develop, and Shape Your Dreams",
         footerText: "© 2025 Hermeteus (Francisco Fernandez). All rights reserved.",
@@ -29,6 +30,7 @@ const translations = {
         about: "Sobre mí",
         portfolio: "Portafolio",
         social: "Redes Sociales",
+        achivements: "Logros",
         heroTitle: "Hermeteus Dreamforge",
         heroDescription: "Diseña, Desarrolla, y da forma a tus sueños",
         footerText: "© 2025 Hermeteus (Francisco Fernandez). Todos los derechos reservados.",
@@ -57,6 +59,7 @@ function applyLanguage(language) {
     document.getElementById('about-link').textContent = translations[language].about;  // Set the 'About Me' link text
     document.getElementById('portfolio-link').textContent = translations[language].portfolio;  // Set the 'Portfolio' link text
     document.getElementById('social-link').textContent = translations[language].social;  // Set the 'Social Networks' link text
+    document.getElementById('achievements-link').textContent = translations[language].achivements;  // Set the 'Achivements' link text
     document.getElementById('hero-title').textContent = translations[language].heroTitle;  // Set the hero section title
     document.getElementById('hero-description').textContent = translations[language].heroDescription;  // Set the hero section description
     document.getElementById('footer-text').textContent = translations[language].footerText;  // Set the footer text

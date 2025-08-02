@@ -13,10 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const aboutLink = document.getElementById("about-link");
     const portfolioLink = document.getElementById("portfolio-link");
     const socialLink = document.getElementById("social-link");
+    const achievementsLink = document.getElementById("achievements-link");
+    
 
     // Check if all the necessary elements are found in the DOM
     if (heroSection && aboutSection && portfolioSection && socialSection &&
-        homeLink && aboutLink && portfolioLink && socialLink) {
+        homeLink && aboutLink && portfolioLink && socialLink && achievementsLink) {
 
         // Function to hide all sections with a fade-out animation
         function hideAllSections() {
